@@ -93,6 +93,26 @@
 }
 
 .ngdialog-content {
+  position : relative
+}
+
+.ngdialog-center {
+  height : 100%;
+  width : 100%;
+  display : table;
+  position : relative;
+}
+
+.ngdialog-center-row {
+  display : table-row;
+}
+.ngdialog-center-cell {
+  display : table-cell;
+  vertical-align : middle;
+}
+
+
+.ngdialog-content {
   background: white;
   -webkit-backface-visibility: hidden;
   -webkit-animation: ngdialog-fadein 0.5s;

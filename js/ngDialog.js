@@ -488,9 +488,12 @@
 
                             var hasOverlayClass = options.overlay ? '' : ' ngdialog-no-overlay';
                             $dialog = $el('<div id="ngdialog' + localID + '" class="ngdialog' + hasOverlayClass + '"></div>');
-                           
-                            template = '<div class="ngdialog-center"><div class="ngdialog-center-row"><div class="ngdialog-center-cell"><div class="ngdialog-content" role="document">'+template+'</div></div></div></div>';
-                            $dialog.html((options.overlay ? '<div class="ngdialog-overlay"></div>' + template + '</div>' : template));
+
+                            template =
+                                '<div class="ngdialog-center"><div class="ngdialog-center-row"><div class="ngdialog-center-cell">'
+                                + (options.overlay ? '<div class="ngdialog-overlay"></div>' : '')
+                                + '<div class="ngdialog-content" role="document">'+template+'</div></div></div></div>';
+                            $dialog.html(template);
 
                             $dialog.data('$ngDialogOptions', options);
 
@@ -754,7 +757,7 @@
                         return defaults;
                     }
                 };
-                
+
                 angular.forEach(
                     ['html', 'body'],
                     function(elementName) {
